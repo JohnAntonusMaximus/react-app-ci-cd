@@ -10,7 +10,7 @@ script:
 
 deploy:
   provider: elasticbeanstalk
-  region: us-east-1c
+  region: us-east-1
   app: "react-app-ci-cd"
   env: "ReactAppCiCd-env"
   bucket_name: "elasticbeanstalk-us-east-1-539520134050"
