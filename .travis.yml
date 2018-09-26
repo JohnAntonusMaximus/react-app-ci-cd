@@ -5,9 +5,6 @@ services:
 before_install:
   - docker build -t johnantonusmaximus/react-app-ci-cd -f Dockerfile.prod . 
 
-script:
-  - docker run johnantonusmaximus/react-app-ci-cd npm run test -- --coverage
-
 deploy:
   provider: elasticbeanstalk
   region: us-east-1
