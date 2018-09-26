@@ -7,3 +7,16 @@ before_install:
 
 script:
   - docker run johnantonusmaximus/react-app-ci-cd npm run test -- --coverage
+
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-1c
+  app: "react-app-ci-cd"
+  env: "ReactAppCiCd-env"
+  bucket_name: "elasticbeanstalk-us-east-1-539520134050"
+  bucket_path: "react-app-ci-cd"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: 
+    secure: "$AWS_SECRET_ACCESS_KEY"
